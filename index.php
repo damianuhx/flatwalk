@@ -8,6 +8,7 @@ if (!isset ($_GET['room'])||!isset ($_GET['pos'])){$room='gang1'; $pos=0;}
 if (isset ($_GET['room'])){$room=$_GET['room'];}
 if (isset ($_GET['pos'])){$pos=intval($_GET['pos']);}
 
+        //define places. the array of numbers defines the set and order of pictures when turning around
     $ort=array(
     'kueche'=>array(191, 192, 193, 194, 195, 196, 197, 198),
     'corin'=>array(200, 207, 206, 205, 204, 203, 202, 201),
@@ -38,7 +39,8 @@ if (isset ($_GET['pos'])){$pos=intval($_GET['pos']);}
             $pic=$ort[$room][$pos];
         }
         echo $pic;
-    
+
+        //this array defines what position (i.e. picture number) in the $ort (room) array is taken after the player has moved forward. 
     $pfad1=array(
         175=>0,
         176=>0,
@@ -75,7 +77,8 @@ if (isset ($_GET['pos'])){$pos=intval($_GET['pos']);}
         269=>1,
         277=>4
     );
-    
+
+        //this array defines in which pictures you can move forward to which room
     $pfad2=array(
         175=>'wc',
         176=>'bad',
